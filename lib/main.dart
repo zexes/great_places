@@ -13,8 +13,14 @@ class MyApp extends StatelessWidget {
       create: (context) => GreatPlaces(),
       child: MaterialApp(
         title: 'Great Places',
-        theme:
-            ThemeData(primarySwatch: Colors.indigo, accentColor: Colors.amber),
+        theme: ThemeData(
+            primarySwatch: Colors.indigo,
+            accentColor: Colors.amber,
+            buttonTheme: ButtonThemeData(
+              buttonColor: Colors.deepPurple, //  <-- dark color
+              textTheme: ButtonTextTheme
+                  .primary, //  <-- this auto selects the right color
+            )),
         home: PlacesListScreen(),
         routes: {AddPlaceScreen.id: (ctx) => AddPlaceScreen()},
       ),
